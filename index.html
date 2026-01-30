@@ -416,6 +416,32 @@
     });
   
   });
+
+
+
+
+  const $header = $('.header');
+  if (!$header.length) return;
+
+  function handleMobileHeader() {
+    const isMobile = window.matchMedia('(max-width: 768px)').matches;
+    if (!isMobile) {
+      $header.removeClass('is-fixed');
+      return;
+    }
+
+    const triggerTop = $header.offset().top;
+    const scrollTop = $(window).scrollTop();
+
+    if (scrollTop > triggerTop) {
+      $header.addClass('is-fixed');
+    } else {
+      $header.removeClass('is-fixed');
+    }
+  }
+
+  $(window).on('scroll resize', handleMobileHeader);
+});
   </script>  
   
 </body>
