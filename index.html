@@ -352,18 +352,27 @@
     const $workSection = $('.work-section');
     const $body = $('body');
     const $workText = $('.work-fixed-text');
-  
+
+    // 안전장치
     if (!$scrollArea.length || !$workSection.length) return;
-  
-    // 기준값 미리 계산
-    const workStart = $workSection.position().top - 200;
-    const workEnd =
-      workStart + $workSection.outerHeight() - 200;
-  
+
+    // 초기 상태
+    $body.removeClass('dark-mode');
+
     $scrollArea.on('scroll', function () {
       const scrollTop = $scrollArea.scrollTop();
-  
-      if (scrollTop >= workStart && scrollTop <= workEnd) {
+      const containerTop = $scrollArea.offset().top;
+
+      // work-section 기준 위치 (content 기준으로 계산)
+      const workTop =
+        $workSection.offset().top - containerTop + scrollTop;
+      const workBottom = workTop + $workSection.outerHeight();
+
+      // work-section 안에 있는지
+      const isInWorkSection =
+        scrollTop >= workTop && scrollTop < workBottom;
+
+      if (isInWorkSection) {
         if (!$body.hasClass('dark-mode')) {
           $body.addClass('dark-mode');
           $workText.html(
@@ -383,6 +392,8 @@
         }
       }
     });
+
+
   });
 
   $(function () {
