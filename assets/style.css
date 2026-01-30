@@ -1,0 +1,217 @@
+*{
+    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+}
+.wrap .header{
+    position:absolute;
+    top:50px;
+    width:100%;
+    z-index:99;
+    padding:30px 0;
+    
+   
+}
+
+.wrap .header ul{
+    width:90%;
+    margin:0 auto;
+    display:flex;
+    justify-content: flex-end;
+    align-items: center;
+ 
+}
+.wrap .header ul li a{
+    padding:13px 30px;
+    font-weight:600;
+    border-radius:25px;
+   
+}
+.wrap .header ul .contact a{
+    background:#7d4efc;
+    color:#fff;
+    font-weight:500;
+}
+.wrap .header ul li + li{
+    margin-left:40px;
+}
+.section_main .up{
+    z-index:2;
+}
+.section_main h1{
+    font-size:80px;
+    font-weight:900;
+    line-height:1.4;
+    text-align:center;
+}
+.section_main .desc{
+    margin-top:50px;
+    font-size:20px;
+    line-height:1.8;
+    text-align:center;
+}
+.section     .desc + .tit{
+    margin-top:100px;
+
+}
+
+.section{
+    padding:50px 0;
+}
+.section .inner{
+    max-width:1200px;
+    margin:0 auto;
+    padding:0 50px;
+}
+.section .tit{
+    font-size:35px;
+    font-weight:bold;
+}
+.section .desc{
+    margin-top:50px;
+    font-size:18px;
+    line-height:1.5;
+}
+.section_main {
+    min-height: 100vh;
+    
+  
+    position: relative;
+    overflow: hidden;
+    height:100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background: linear-gradient(
+        180deg,
+        #fff0f4 0%,
+        #fff3f6 100%
+    );
+  }
+
+
+
+/* 공통 도형 */
+.shape {
+    position: absolute;
+    border-radius: 20px;
+    opacity: 0.9;
+  
+  }
+  
+ /* 1. 라운드 사각형 */
+.rect {
+    width: 180px;
+    height: 180px;
+    top: 15%;
+    left: 8%;
+    border-radius: 32px;
+    background: hsl(226, 92%, 90%);
+    animation: floatY 1.2s ease-in-out infinite;
+}
+
+/* 2. 원 */
+.circle {
+    width: 120px;
+    height: 120px;
+    top: 55%;
+    left: 18%;
+    border-radius: 50%;
+    background: #FFE3EA;
+    animation: floatX 1s ease-in-out infinite;
+}
+
+/* 3. 타원 */
+.oval {
+    width: 200px;
+    height: 120px;
+    top: 25%;
+    right: 10%;
+    border-radius: 100px;
+    background: #FFDCE6;
+    animation: floatRotate 1.6s ease-in-out infinite;
+}
+
+/* 4. 블롭 느낌 */
+.blob {
+    width: 220px;
+    height: 220px;
+    bottom: 10%;
+    right: 18%;
+    background: #c3e2df9f;
+    border-radius: 55% 45% 60% 40% / 50% 60% 40% 50%;
+    animation: blobMove 1.8s ease-in-out infinite;
+}
+
+/* 5. 얇은 라인 도형 */
+.thin {
+    width: 260px;
+    height: 60px;
+    top: 70%;
+    left: 5%;
+    border-radius: 40px;
+    background: #FFF;
+    opacity: 0.4;
+    animation: floatX 1.3s ease-in-out infinite reverse;
+}
+
+/* 6. 작은 포인트 도형 */
+.mini {
+    width: 60px;
+    height: 60px;
+    top: 40%;
+    right: 35%;
+    border-radius: 18px;
+    background: #FFD1DD;
+    animation: floatY 0.9s ease-in-out infinite;
+}
+
+/* 애니메이션 */
+@keyframes floatY {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-18px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes floatX {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(16px); }
+    100% { transform: translateX(0); }
+}
+
+@keyframes floatRotate {
+    0% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-14px) rotate(6deg); }
+    100% { transform: translateY(0) rotate(0deg); }
+}
+
+@keyframes blobMove {
+0% {
+    border-radius: 55% 45% 60% 40% / 50% 60% 40% 50%;
+    transform: translateY(0);
+}
+50% {
+    border-radius: 45% 55% 40% 60% / 60% 40% 60% 40%;
+    transform: translateY(-12px);
+}
+100% {
+    border-radius: 55% 45% 60% 40% / 50% 60% 40% 50%;
+    transform: translateY(0);
+}
+}
+.skill-list {
+    margin-top:50px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+.skill-list i{
+    font-size:25px;
+}   
+.skill-list li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #555;
+    font-size:18px;
+    font-weight:500;
+}
